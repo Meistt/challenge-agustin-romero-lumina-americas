@@ -5,6 +5,8 @@ import com.alkemy.agustin.romero.repository.RepositorioPersonaje;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("servicioPersonaje")
 public class ServicePersonajeImpl implements ServicePersonaje{
 
@@ -78,4 +80,31 @@ public class ServicePersonajeImpl implements ServicePersonaje{
 
         return encontrado;
     }
+
+    @Override
+    public List<Personaje> buscarPorNombre(String nombre) {
+        return this.repositorioPersonaje.buscarPorNombre(nombre);
+    }
+
+    @Override
+    public List<Personaje> buscarPorEdad(Integer edad) {
+        return this.repositorioPersonaje.buscarPorEdad(edad);
+    }
+
+    @Override
+    public List<Personaje> buscarCoincidenciasPorPeliculas(Long id) {
+        return this.repositorioPersonaje.buscarPeliculasDondeApareceElPersonaje();
+    }
+
+    @Override
+    public List<Personaje> getPersonajesList() {
+        return this.repositorioPersonaje.getPersonajesList();
+    }
+
+    @Override
+    public List<Personaje> personajeDetalle(Long id) {
+        return null;
+    }
+
+
 }

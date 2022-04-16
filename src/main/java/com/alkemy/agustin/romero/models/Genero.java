@@ -1,18 +1,18 @@
 package com.alkemy.agustin.romero.models;
 
 public class Genero {
-    private Integer idGenero;
+    private Long idGenero;
     private String nombre;
 
     public Genero(){
 
     }
 
-    public Integer getIdGenero() {
+    public Long getIdGenero() {
         return idGenero;
     }
 
-    public void setIdGenero(Integer idGenero) {
+    public void setIdGenero(Long idGenero) {
         this.idGenero = idGenero;
     }
 
