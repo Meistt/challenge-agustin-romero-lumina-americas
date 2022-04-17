@@ -17,6 +17,11 @@ public class RepositorioGeneroImpl implements RepositorioGenero{
     }
 
     @Override
+    public Boolean existeGenero(Long id) {
+        return null;
+    }
+
+    @Override
     public void eliminarGenero(Long id) {
 
     }

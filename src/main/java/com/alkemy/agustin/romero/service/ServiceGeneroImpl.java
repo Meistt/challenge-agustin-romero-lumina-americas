@@ -41,7 +41,14 @@ public class ServiceGeneroImpl implements ServiceGenero{
 
     @Override
     public Boolean eliminarGenero(Long id) {
-        return null;
+        Boolean eliminado = false;
+        this.repositorioGenero.eliminarGenero(id);
+        if(!existeGenero(id)){
+            eliminado = true;
+        }else
+            eliminado = false;
+
+        return eliminado;
     }
 
     @Override
@@ -58,6 +65,6 @@ public class ServiceGeneroImpl implements ServiceGenero{
 
     @Override
     public List<Genero> getGeneroList() {
-        return null;
+        return this.repositorioGenero.getGeneroList();
     }
 }
