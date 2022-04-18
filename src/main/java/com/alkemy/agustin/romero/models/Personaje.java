@@ -1,14 +1,14 @@
 package com.alkemy.agustin.romero.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "personaje")
 public class Personaje {
 
-    @Column(name = "id_personaje")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_personaje", nullable = false)
     private Long idPersonaje;
 
     @Column(name = "nombre")

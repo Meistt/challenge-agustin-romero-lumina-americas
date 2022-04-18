@@ -1,15 +1,15 @@
 package com.alkemy.agustin.romero.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "pelicula")
 public class Pelicula {
 
-    @Column(name = "id_pelicula")
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_pelicula", nullable = false)
     private Integer idPelicula;
 
     @Column(name = "titulo")
@@ -20,6 +20,9 @@ public class Pelicula {
 
     @Column(name = "calificacion")
     private Integer calificacion;
+
+    public Pelicula() {
+    }
 
     public Pelicula(Integer idPelicula, String titulo, Date fechaCreacion, Integer calificacion){
 
