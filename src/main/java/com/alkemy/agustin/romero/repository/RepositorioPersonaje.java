@@ -1,6 +1,7 @@
 package com.alkemy.agustin.romero.repository;
 
 import com.alkemy.agustin.romero.models.Personaje;
+import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 

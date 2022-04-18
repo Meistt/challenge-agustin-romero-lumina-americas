@@ -16,4 +16,6 @@ public interface ServicePersonaje {
     List<Personaje> buscarCoincidenciasPorPeliculas(Long id);
     List<Personaje> getPersonajesList();
     List<Personaje> personajeDetalle(Long id);
+
+    // nuevoPersonaje(Personaje nuevo);
 }

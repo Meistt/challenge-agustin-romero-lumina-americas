@@ -6,6 +6,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import java.util.List;
 
 @Repository
@@ -36,8 +37,10 @@ public class RepositorioPersonajeImpl implements RepositorioPersonaje{
     }
 
     @Override
+    @Transactional
     public List<Personaje> getPersonajesList() {
-        return null;
+        String query = "FROM Personaje";
+        return entityManager.createQuery(query).getResultList();
     }
 
     @Override
