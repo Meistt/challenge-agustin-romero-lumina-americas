@@ -22,12 +22,7 @@ public class RepositorioGeneroImpl implements RepositorioGenero{
 
     @Override
     public void agregarGenero(Genero nuevo) {
-
-    }
-
-    @Override
-    public Boolean existeGenero(Long id) {
-        return null;
+        entityManager.merge(nuevo);
     }
 
     @Override
@@ -36,7 +31,9 @@ public class RepositorioGeneroImpl implements RepositorioGenero{
     }
 
     @Override
+    @Transactional
     public List<Genero> getGeneroList() {
-        return null;
+        String query = "FROM Genero";
+        return entityManager.createQuery(query).getResultList();
     }
 }

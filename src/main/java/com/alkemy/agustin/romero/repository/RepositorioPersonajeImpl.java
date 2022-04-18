@@ -23,7 +23,7 @@ public class RepositorioPersonajeImpl implements RepositorioPersonaje{
 
     @Override
     public void crearPersonaje(Personaje nuevo) {
-
+        entityManager.merge(nuevo);
     }
 
     @Override
@@ -33,7 +33,8 @@ public class RepositorioPersonajeImpl implements RepositorioPersonaje{
 
     @Override
     public void eliminarPersonaje(Long id) {
-
+        Personaje personaje = buscarPersonaje(id);
+        entityManager.remove(personaje);
     }
 
     @Override

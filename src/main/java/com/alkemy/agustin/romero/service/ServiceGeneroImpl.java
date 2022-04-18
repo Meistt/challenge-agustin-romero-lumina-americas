@@ -2,7 +2,6 @@ package com.alkemy.agustin.romero.service;
 
 import com.alkemy.agustin.romero.models.Genero;
 import com.alkemy.agustin.romero.repository.RepositorioGenero;
-import com.alkemy.agustin.romero.repository.RepositorioPersonaje;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -25,18 +24,9 @@ public class ServiceGeneroImpl implements ServiceGenero{
     }
 
     @Override
-    public Boolean agregarGenero(Long id, String nombreGenero){
-        Boolean creado = false;
-        if(!existeGenero(id)){
-            Genero nuevo = new Genero();
-            nuevo.setIdGenero(id);
-            nuevo.setNombre(nombreGenero);
-            this.repositorioGenero.agregarGenero(nuevo);
-            creado = true;
-        }else creado = false;
-
-        return creado;
-
+    public Genero agregarGenero(Genero nuevo){
+        this.repositorioGenero.agregarGenero(nuevo);
+        return nuevo;
     }
 
     @Override
