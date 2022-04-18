@@ -1,13 +1,25 @@
 package com.alkemy.agustin.romero.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Date;
 
+@Entity
+@Table(name = "pelicula")
 public class Pelicula {
+
+    @Column(name = "id_pelicula")
     private Integer idPelicula;
+
+    @Column(name = "titulo")
     private String titulo;
+
+    @Column(name = "fecha")
     private Date fechaCreacion;
+
+    @Column(name = "calificacion")
     private Integer calificacion;
-    private Personaje personaje;
 
     public Pelicula(Integer idPelicula, String titulo, Date fechaCreacion, Integer calificacion){
 
@@ -45,11 +57,4 @@ public class Pelicula {
         this.calificacion = calificacion;
     }
 
-    public Personaje getPersonaje() {
-        return personaje;
-    }
-
-    public void setPersonaje(Personaje personaje) {
-        this.personaje = personaje;
-    }
 }

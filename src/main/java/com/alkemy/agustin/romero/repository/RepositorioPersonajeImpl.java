@@ -1,9 +1,13 @@
 package com.alkemy.agustin.romero.repository;
 
 import com.alkemy.agustin.romero.models.Personaje;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Repository
+@Transactional
 public class RepositorioPersonajeImpl implements RepositorioPersonaje{
 
     @Override

@@ -1,10 +1,26 @@
 package com.alkemy.agustin.romero.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "personaje")
 public class Personaje {
+
+    @Column(name = "id_personaje")
     private Long idPersonaje;
+
+    @Column(name = "nombre")
     private String nombre;
+
+    @Column(name = "edad")
     private Integer edad;
+
+    @Column(name = "peso")
     private Double peso;
+
+    @Column(name = "historia")
     private String historia;
 
     public Personaje(){
